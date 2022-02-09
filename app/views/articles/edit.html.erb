@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>.: Article | Edit Article :. </title>
+    </head>
+<body>
+        <center>
+            <%= link_to "Home", articles_path() %>
+            <h2>Edit Article</h2>
+            
+            <%= render "form", article: @article %>
+        </center>
+</body>
+</html>

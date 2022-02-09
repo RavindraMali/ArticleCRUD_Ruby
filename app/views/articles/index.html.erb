@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>.: Article | Home :. </title>
+    </head>
+<body>
+        <center>
+            <h2>Article List</h2>
+            <%= link_to "new", new_article_path %>
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <td>Sr.No</td>
+                        <td>Title</td>
+                        <td>Body</td>
+                        <td>Created At</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% srno=1 %>
+                    <% @artcles.each do |article| %>
+                        <tr>
+                            <td><%= srno %><% srno+=1 %></td>
+                            <td><%= link_to article.title, article %></td>
+                            <td><%= article.body %></td>
+                            <td><%= article.created_at %></td>
+                            <td>
+                                <%= link_to "Show", article %> &nbsp; 
+                                <%= link_to "Edit", edit_article_path(article) %> &nbsp;
+                                <%= link_to "Destroy", article_path(article), data: {
+                                            turbo_method: :delete,
+                                            turbo_confirm: "Are you sure?"
+                                        } %>
+                            </td>  
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            
+        </center>
+</body>
+</html>

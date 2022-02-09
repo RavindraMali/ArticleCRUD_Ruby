@@ -1,0 +1,2716 @@
+Started GET "/" for 127.0.0.1 at 2022-02-08 10:47:08 +0530
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/pcs200/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/pcs200/.rbenv/versions/3.0.3/lib/ruby/gems/3.0.0/gems/railties-7.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.9ms | Allocations: 812)
+Completed 200 OK in 28ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 7629)
+
+
+Started GET "/article" for 127.0.0.1 at 2022-02-08 10:47:15 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 276.0ms | Allocations: 91731)
+Completed 200 OK in 279ms (Views: 277.7ms | ActiveRecord: 0.0ms | Allocations: 93037)
+
+
+Started GET "/a" for 127.0.0.1 at 2022-02-08 10:47:33 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/a"):
+  
+Started GET "/" for 127.0.0.1 at 2022-02-08 10:47:37 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 23)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 13565)
+Completed 200 OK in 20ms (Views: 19.4ms | Allocations: 14457)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (69.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (80.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArticles (20220209050544)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220209050544"]]
+  [1m[36mTRANSACTION (71.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-02-09 05:08:45.960000"], ["updated_at", "2022-02-09 05:08:45.960000"]]
+  [1m[36mTRANSACTION (59.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title1"], ["body", "body1"], ["created_at", "2022-02-09 05:10:02.406119"], ["updated_at", "2022-02-09 05:10:02.406119"]]
+  [1m[36mTRANSACTION (47.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title2"], ["body", "body2"], ["created_at", "2022-02-09 05:10:38.998671"], ["updated_at", "2022-02-09 05:10:38.998671"]]
+  [1m[36mTRANSACTION (56.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:48:54 +0530
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2332)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 2439)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 8935)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+    <head>
+        <title>.: Article | Home :. </title>
+    </head>
+<body>
+        <center>
+            <h2>Article List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Sr.No</td>
+                        <td>Title</td>
+                        <td>Body</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% srno=1 %>
+                    <%= @artcles.each do |article| %>
+                        <tr>
+                            <td><%= srno++ %></td>
+                            <td><%= article.title %></td>
+                            <td><%= article.body %></td>
+                            <td><%= article.created_at %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            
+        </center>
+</body>
+</html>
+
+):
+1:    <html>
+2:        <head>
+3:            <title>.: Article | Home :. </title>
+4:        </head>
+5:    <body>
+6:            <center>
+7:                <h2>Article List</h2>
+8:                <table>
+9:                    <thead>
+10:                        <tr>
+11:                            <td>Sr.No</td>
+12:                            <td>Title</td>
+13:                            <td>Body</td>
+14:                            <td>Action</td>
+15:                        </tr>
+16:                    </thead>
+17:                    <tbody>
+18:                        <% srno=1 %>
+19:                        <%= @artcles.each do |article| %>
+20:                            <tr>
+21:                                <td><%= srno++ %></td>
+22:                                <td><%= article.title %></td>
+23:                                <td><%= article.body %></td>
+24:                                <td><%= article.created_at %></td>
+25:                            </tr>
+26:                        <% end %>
+27:                    </tbody>
+28:                </table>
+29:                
+30:            </center>
+31:    </body>
+32:    </html>
+  
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:52:29 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1269)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1358)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2488)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+    <head>
+        <title>.: Article | Home :. </title>
+    </head>
+<body>
+        <center>
+            <h2>Article List</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Sr.No</td>
+                        <td>Title</td>
+                        <td>Body</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% srno=1 %>
+                    <%= @artcles.each do |article| %>
+                        <tr>
+                            <td><%= srno++ %></td>
+                            <td><%= article.title %></td>
+                            <td><%= article.body %></td>
+                            <td><%= article.created_at %></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            
+        </center>
+</body>
+</html>
+
+):
+1:    <html>
+2:        <head>
+3:            <title>.: Article | Home :. </title>
+4:        </head>
+5:    <body>
+6:            <center>
+7:                <h2>Article List</h2>
+8:                <table>
+9:                    <thead>
+10:                        <tr>
+11:                            <td>Sr.No</td>
+12:                            <td>Title</td>
+13:                            <td>Body</td>
+14:                            <td>Action</td>
+15:                        </tr>
+16:                    </thead>
+17:                    <tbody>
+18:                        <% srno=1 %>
+19:                        <%= @artcles.each do |article| %>
+20:                            <tr>
+21:                                <td><%= srno++ %></td>
+22:                                <td><%= article.title %></td>
+23:                                <td><%= article.body %></td>
+24:                                <td><%= article.created_at %></td>
+25:                            </tr>
+26:                        <% end %>
+27:                    </tbody>
+28:                </table>
+29:                
+30:            </center>
+31:    </body>
+32:    </html>
+  
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:21: syntax error, unexpected ')'
+app/views/articles/index.html.erb:26: syntax error, unexpected `end', expecting ')'
+app/views/articles/index.html.erb:35: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:52:47 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 10034)
+  Rendered layout layouts/application.html.erb (Duration: 99.6ms | Allocations: 43508)
+Completed 200 OK in 103ms (Views: 100.7ms | ActiveRecord: 1.2ms | Allocations: 44722)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:53:22 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3923)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.1ms | Allocations: 5126)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:53:32 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1054)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3757)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 4921)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:53:53 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1055)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3755)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms | Allocations: 4918)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:00 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1062)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3767)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 4944)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:11 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1062)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3777)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.2ms | Allocations: 4954)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:12 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 637)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2860)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms | Allocations: 3219)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:15 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (5.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.5ms | Allocations: 1054)
+  Rendered layout layouts/application.html.erb (Duration: 48.7ms | Allocations: 3739)
+Completed 200 OK in 52ms (Views: 45.6ms | ActiveRecord: 5.4ms | Allocations: 4881)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:19 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1058)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3768)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.1ms | Allocations: 4932)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:20 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 637)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2879)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.1ms | Allocations: 3238)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:23 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:19
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 637)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2858)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 3195)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 10:54:54 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:20
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3761)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 4903)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:01:19 +0530
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 13.4ms | Allocations: 6442)
+  Rendered layout layouts/application.html.erb (Duration: 78.1ms | Allocations: 40139)
+Completed 200 OK in 91ms (Views: 80.7ms | ActiveRecord: 0.9ms | Allocations: 46698)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:01:21 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1981)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2076)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms | Allocations: 5141)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+    <head>
+        <title>.: Article | Show Article :. </title>
+    </head>
+<body>
+        <center>
+            <h2>Article Details</h2>
+            
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <td>Sr.No</td>
+                        <td>Title</td>
+                        <td>Body</td>
+                        <td>Created At</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% srno=1 %>
+                        <tr>
+                            <td><%= srno %><% srno+=1 %></td>
+                            <td><%= @article.title %></td>
+                            <td><%= @article.body %></td>
+                            <td><%= @article.created_at %></td>
+                            <td></td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            
+        </center>
+</body>
+</html>
+
+):
+1:    <html>
+2:        <head>
+3:            <title>.: Article | Show Article :. </title>
+4:        </head>
+5:    <body>
+6:            <center>
+7:                <h2>Article Details</h2>
+8:                
+9:                <table border="1px">
+10:                    <thead>
+11:                        <tr>
+12:                            <td>Sr.No</td>
+13:                            <td>Title</td>
+14:                            <td>Body</td>
+15:                            <td>Created At</td>
+16:                            <td>Action</td>
+17:                        </tr>
+18:                    </thead>
+19:                    <tbody>
+20:                        <% srno=1 %>
+21:                            <tr>
+22:                                <td><%= srno %><% srno+=1 %></td>
+23:                                <td><%= @article.title %></td>
+24:                                <td><%= @article.body %></td>
+25:                                <td><%= @article.created_at %></td>
+26:                                <td></td>
+27:                            </tr>
+28:                        <% end %>
+29:                    </tbody>
+30:                </table>
+31:                
+32:            </center>
+33:    </body>
+34:    </html>
+  
+app/views/articles/show.html.erb:37: syntax error, unexpected `end', expecting end-of-input
+app/views/articles/show.html.erb:37: syntax error, unexpected `end', expecting end-of-input
+app/views/articles/show.html.erb:37: syntax error, unexpected `end', expecting end-of-input
+app/views/articles/show.html.erb:37: syntax error, unexpected `end', expecting end-of-input
+app/views/articles/show.html.erb:37: syntax error, unexpected `end', expecting end-of-input
+app/views/articles/show.html.erb:37: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:02:33 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1189)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 3886)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.2ms | Allocations: 5062)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:02:35 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 246)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2477)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 3398)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2022-02-09 11:02:38 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2266)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3071)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:02:41 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2245)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.2ms | Allocations: 3050)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2022-02-09 11:02:43 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2267)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.1ms | Allocations: 3087)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:03:51 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 3847)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.1ms | Allocations: 4991)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:03:54 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 702)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2927)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 3285)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:04:07 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3859)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.1ms | Allocations: 5001)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:04:42 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3874)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 5041)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:04:54 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3853)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 5016)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:05:33 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1180)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3854)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.1ms | Allocations: 5017)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:05:36 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4529)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4611)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms | Allocations: 5484)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<ActionView::Base:0x0000000000bce8>
+Did you mean?  @article):
+    20:                             <td><%= @article.title %></td>
+    21:                             <td><%= @article.body %></td>
+    22:                             <td><%= @article.created_at %></td>
+    23:                             <td><%= link_to "Show", article %></td>
+    24:                         </tr>
+    25:                 </tbody>
+    26:             </table>
+  
+app/views/articles/show.html.erb:23
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:06:52 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 416)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3104)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.1ms | Allocations: 4715)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:06:55 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2310)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 0.1ms | Allocations: 3187)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:06:56 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2323)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 3129)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:06:57 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2301)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 3106)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:06:59 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2292)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 3097)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:07:00 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2280)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 3085)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:07:02 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2328)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 3130)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:07:12 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1083)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3308)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 3701)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:07:14 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2298)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.1ms | Allocations: 3103)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:08:37 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1240)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1329)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2906)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+    <head>
+        <title>.: Article | Show Article :. </title>
+    </head>
+<body>
+        <center>
+            <%= link_to "Home" artcles_path(artcles) %>
+            <h2>Article Details</h2>
+            
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Body</td>
+                        <td>Created At</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td><%= @article.title %></td>
+                            <td><%= @article.body %></td>
+                            <td><%= @article.created_at %></td>
+                            <td><%= link_to "Show", @article %></td>
+                        </tr>
+                </tbody>
+            </table>
+            
+        </center>
+</body>
+</html>
+
+):
+1:    <html>
+2:        <head>
+3:            <title>.: Article | Show Article :. </title>
+4:        </head>
+5:    <body>
+6:            <center>
+7:                <%= link_to "Home" artcles_path(artcles) %>
+8:                <h2>Article Details</h2>
+9:                
+10:                <table border="1px">
+11:                    <thead>
+12:                        <tr>
+13:                            <td>Title</td>
+14:                            <td>Body</td>
+15:                            <td>Created At</td>
+16:                            <td>Action</td>
+17:                        </tr>
+18:                    </thead>
+19:                    <tbody>
+20:                            <tr>
+21:                                <td><%= @article.title %></td>
+22:                                <td><%= @article.body %></td>
+23:                                <td><%= @article.created_at %></td>
+24:                                <td><%= link_to "Show", @article %></td>
+25:                            </tr>
+26:                    </tbody>
+27:                </table>
+28:                
+29:            </center>
+30:    </body>
+31:    </html>
+  
+app/views/articles/show.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+app/views/articles/show.html.erb:7: syntax error, unexpected local variable or method, expecting ')'
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:08:53 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 10.5ms | Allocations: 4482)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4570)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms | Allocations: 6211)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artcles' for #<ActionView::Base:0x0000000000c5a8>
+Did you mean?  @article):
+    4:     </head>
+    5: <body>
+    6:         <center>
+    7:             <%= link_to "Home", artcles_path(artcles) %>
+    8:             <h2>Article Details</h2>
+    9:             
+   10:             <table border="1px">
+  
+app/views/articles/show.html.erb:7
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:09:00 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4476)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4564)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms | Allocations: 6205)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artcles' for #<ActionView::Base:0x0000000000c8a0>
+Did you mean?  @article):
+    4:     </head>
+    5: <body>
+    6:         <center>
+    7:             <%= link_to "Home", articles_path(artcles) %>
+    8:             <h2>Article Details</h2>
+    9:             
+   10:             <table border="1px">
+  
+app/views/articles/show.html.erb:7
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:09:07 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4476)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4564)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.1ms | Allocations: 6205)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `artcles' for #<ActionView::Base:0x0000000000cb98>
+Did you mean?  @article):
+    4:     </head>
+    5: <body>
+    6:         <center>
+    7:             <%= link_to "Home", article_path(artcles) %>
+    8:             <h2>Article Details</h2>
+    9:             
+   10:             <table border="1px">
+  
+app/views/articles/show.html.erb:7
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:09:18 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4476)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4564)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms | Allocations: 6205)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles' for #<ActionView::Base:0x0000000000ce90>
+Did you mean?  @article):
+    4:     </head>
+    5: <body>
+    6:         <center>
+    7:             <%= link_to "Home", articles_path(articles) %>
+    8:             <h2>Article Details</h2>
+    9:             
+   10:             <table border="1px">
+  
+app/views/articles/show.html.erb:7
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:09:25 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 455)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3152)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 4834)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:09:27 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1110)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3333)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.1ms | Allocations: 3747)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:09:29 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2319)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.1ms | Allocations: 3148)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:09:30 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 756)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2990)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.1ms | Allocations: 3330)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:09:31 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2322)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 3127)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:09:32 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 756)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2981)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 3321)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2022-02-09 11:09:33 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2341)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 3148)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:09:34 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 756)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 2991)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 3331)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:19:46 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.0ms | Allocations: 4503)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 4591)
+Completed 500 Internal Server Error in 16ms (Allocations: 6482)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_article' for #<ActionView::Base:0x00000000011418>
+Did you mean?  new_article_url):
+     5: <body>
+     6:         <center>
+     7:             <h2>Article List</h2>
+     8:             <%= link_to "new", articles_path(new_article) %>
+     9:             <table border="1px">
+    10:                 <thead>
+    11:                     <tr>
+  
+app/views/articles/index.html.erb:8
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:20:15 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:21
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3076)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 16835)
+Completed 200 OK in 27ms (Views: 26.2ms | ActiveRecord: 0.5ms | Allocations: 17987)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:20:18 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 18.9ms | Allocations: 9068)
+  Rendered articles/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 9420)
+  Rendered layout layouts/application.html.erb (Duration: 24.1ms | Allocations: 11595)
+Completed 200 OK in 32ms (Views: 25.6ms | ActiveRecord: 0.0ms | Allocations: 12069)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:20:43 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "body"=>""}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", ""], ["body", ""], ["created_at", "2022-02-09 05:50:43.039844"], ["updated_at", "2022-02-09 05:50:43.039844"]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (59.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/3
+Completed 302 Found in 67ms (ActiveRecord: 60.4ms | Allocations: 3614)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2022-02-09 11:20:43 +0530
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 455)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3139)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.2ms | Allocations: 5492)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2022-02-09 11:20:45 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2313)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.1ms | Allocations: 3190)
+
+
+Started GET "/articles/3" for 127.0.0.1 at 2022-02-09 11:20:48 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2344)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 3149)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:20:50 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1211)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3433)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 3828)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:20:54 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 4.0ms | Allocations: 1261)
+  Rendered articles/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1594)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 3641)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 4040)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:21:01 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"ravindra", "body"=>"ravi"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ravindra"], ["body", "ravi"], ["created_at", "2022-02-09 05:51:01.918769"], ["updated_at", "2022-02-09 05:51:01.918769"]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (123.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/4
+Completed 302 Found in 131ms (ActiveRecord: 124.2ms | Allocations: 2364)
+
+
+Started GET "/articles/4" for 127.0.0.1 at 2022-02-09 11:21:02 +0530
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2325)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.1ms | Allocations: 3133)
+
+
+Started GET "/articles/4" for 127.0.0.1 at 2022-02-09 11:21:04 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2325)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.1ms | Allocations: 3131)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:21:05 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 959)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3187)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 3527)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:23:08 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:21
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 11.3ms | Allocations: 3648)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 17369)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 2.1ms | Allocations: 19508)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:23:10 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.8ms | Allocations: 1287)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1622)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3669)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4098)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:23:12 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.9ms | Allocations: 825)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 933)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2980)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3319)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:23:14 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.2ms | Allocations: 828)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2983)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3322)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:23:15 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "body"=>""}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 6.9ms | Allocations: 3513)
+  Rendered articles/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3667)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 5763)
+Completed 422 Unprocessable Entity in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 7125)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:28:40 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.6ms | Allocations: 1354)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4198)
+Completed 200 OK in 10ms (Views: 9.4ms | Allocations: 5340)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:28:43 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "body"=>""}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 7.8ms | Allocations: 3352)
+  Rendered articles/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3506)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5602)
+Completed 422 Unprocessable Entity in 16ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 7413)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:28:52 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 16.4ms | Allocations: 822)
+  Rendered articles/new.html.erb within layouts/application (Duration: 16.8ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 2977)
+Completed 200 OK in 42ms (Views: 35.5ms | ActiveRecord: 0.0ms | Allocations: 3317)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:28:56 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1370)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3607)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 4003)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:28:58 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.6ms | Allocations: 825)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 933)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 2980)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 3322)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:31:42 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.6ms | Allocations: 1363)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1769)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4215)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 5366)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:32:21 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "body"=>""}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 5.7ms | Allocations: 3352)
+  Rendered articles/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3506)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 5602)
+Completed 422 Unprocessable Entity in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 6836)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:32:52 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"dsdd", "body"=>"wewew"}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.9ms | Allocations: 1602)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1709)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3806)
+Completed 422 Unprocessable Entity in 10ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4896)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:32:56 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"dsdd", "body"=>"wewewsdsdsdsd"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dsdd"], ["body", "wewewsdsdsdsd"], ["created_at", "2022-02-09 06:02:56.743942"], ["updated_at", "2022-02-09 06:02:56.743942"]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (58.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles/5
+Completed 302 Found in 65ms (ActiveRecord: 58.4ms | Allocations: 2462)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2022-02-09 11:32:56 +0530
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 354)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2573)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 4079)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:33:00 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1369)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3588)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 3982)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:33:29 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:21
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3393)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 16913)
+Completed 200 OK in 32ms (Views: 29.9ms | ActiveRecord: 1.4ms | Allocations: 18675)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:33:31 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.1ms | Allocations: 935)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1052)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3114)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3491)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:33:38 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title 2", "body"=>"body 2"}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.2ms | Allocations: 1616)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1723)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3820)
+Completed 422 Unprocessable Entity in 11ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 5062)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:33:50 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title 2", "body"=>"body 2 with 10 characters\n"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title 2"], ["body", "body 2 with 10 characters\n"], ["created_at", "2022-02-09 06:03:50.528259"], ["updated_at", "2022-02-09 06:03:50.528259"]]
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (49.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:16:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 56ms (ActiveRecord: 49.5ms | Allocations: 2326)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:33:50 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1145)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3376)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 3721)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:43:28 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:21
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3545)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 17256)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 0.5ms | Allocations: 19347)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-02-09 11:43:30 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.2ms | Allocations: 1786)
+
+
+  
+ActionController::MissingExactTemplate (ArticlesController#edit is missing a template for request formats: text/html):
+  
+actionpack (7.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.1) lib/abstract_controller/base.rb:214:in `process_action'
+actionpack (7.0.1) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.1) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.1) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.1) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.1) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.1) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.1) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.1) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.1) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.1) lib/action_dispatch/routing/route_set.rb:850:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (7.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/cookies.rb:693:in `call'
+activerecord (7.0.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.1) lib/puma/configuration.rb:252:in `call'
+puma (5.6.1) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.1) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.1) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.1) lib/puma/server.rb:441:in `process_client'
+puma (5.6.1) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:43:36 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1271)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3512)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms | Allocations: 3864)
+
+
+Started GET "/articles/2/edit" for 127.0.0.1 at 2022-02-09 11:44:21 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.5ms | Allocations: 1437)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1844)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4272)
+Completed 200 OK in 16ms (Views: 9.9ms | ActiveRecord: 0.1ms | Allocations: 5884)
+
+
+Started PATCH "/articles/2" for 127.0.0.1 at 2022-02-09 11:44:49 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title2", "body"=>"body2 233333333333"}, "commit"=>"Update Article", "id"=>"2"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mArticle Update (0.2ms)[0m  [1m[33mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "body2 233333333333"], ["updated_at", "2022-02-09 06:14:49.504705"], ["id", 2]]
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (56.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 69ms (ActiveRecord: 57.8ms | Allocations: 6981)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:44:49 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1854)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 15560)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.2ms | Allocations: 16804)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:45:02 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 340)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2545)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 3446)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:45:07 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 102)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2325)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.1ms | Allocations: 3130)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:45:33 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 440)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3112)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 4727)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-02-09 11:45:35 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.4ms | Allocations: 1350)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1683)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3722)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 4652)
+
+
+Started PATCH "/articles/1" for 127.0.0.1 at 2022-02-09 11:45:40 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title1", "body"=>"body111111111111111"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mArticle Update (0.2ms)[0m  [1m[33mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "body111111111111111"], ["updated_at", "2022-02-09 06:15:40.526278"], ["id", 1]]
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (77.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 85ms (ActiveRecord: 78.0ms | Allocations: 2973)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:45:40 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1630)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3876)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 4322)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:45:42 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 96)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2304)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 3110)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 11:53:30 +0530
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 921)
+  Rendered layout layouts/application.html.erb (Duration: 75.1ms | Allocations: 34575)
+Completed 200 OK in 98ms (Views: 77.5ms | ActiveRecord: 0.8ms | Allocations: 48667)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:53:35 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2131)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2226)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2706)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+    <head>
+        <title>.: Article | Home :. </title>
+    </head>
+<body>
+        <center>
+            <h2>Article List</h2>
+            <%= link_to "new", new_article_path %>
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <td>Sr.No</td>
+                        <td>Title</td>
+                        <td>Body</td>
+                        <td>Created At</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% srno=1 %>
+                    <% @artcles.each do |article| %>
+                        <tr>
+                            <td><%= srno %><% srno+=1 %></td>
+                            <td><%= link_to article.title, article %></td>
+                            <td><%= article.body %></td>
+                            <td><%= article.created_at %></td>
+                            <td>
+                                <%= link_to "Show", article %> &nbsp; 
+                                <%= link_to "Edit", edit_article_path(article) %> &nbsp;
+                                <%= link_to "Delete", articles_path(article), data : {turbo_method: :delete, turbo_confirm: "Are you sure ?" } %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            
+        </center>
+</body>
+</html>
+
+):
+1:    <html>
+2:        <head>
+3:            <title>.: Article | Home :. </title>
+4:        </head>
+5:    <body>
+6:            <center>
+7:                <h2>Article List</h2>
+8:                <%= link_to "new", new_article_path %>
+9:                <table border="1px">
+10:                    <thead>
+11:                        <tr>
+12:                            <td>Sr.No</td>
+13:                            <td>Title</td>
+14:                            <td>Body</td>
+15:                            <td>Created At</td>
+16:                            <td>Action</td>
+17:                        </tr>
+18:                    </thead>
+19:                    <tbody>
+20:                        <% srno=1 %>
+21:                        <% @artcles.each do |article| %>
+22:                            <tr>
+23:                                <td><%= srno %><% srno+=1 %></td>
+24:                                <td><%= link_to article.title, article %></td>
+25:                                <td><%= article.body %></td>
+26:                                <td><%= article.created_at %></td>
+27:                                <td>
+28:                                    <%= link_to "Show", article %> &nbsp; 
+29:                                    <%= link_to "Edit", edit_article_path(article) %> &nbsp;
+30:                                    <%= link_to "Delete", articles_path(article), data : {turbo_method: :delete, turbo_confirm: "Are you sure ?" } %>
+31:                                </td>
+32:                            </tr>
+33:                        <% end %>
+34:                    </tbody>
+35:                </table>
+36:                
+37:            </center>
+38:    </body>
+39:    </html>
+  
+app/views/articles/index.html.erb:30: syntax error, unexpected ':', expecting ')'
+app/views/articles/index.html.erb:30: syntax error, unexpected ':', expecting ')'
+app/views/articles/index.html.erb:30: syntax error, unexpected ':', expecting ')'
+app/views/articles/index.html.erb:30: syntax error, unexpected ':', expecting ')'
+app/views/articles/index.html.erb:30: syntax error, unexpected ':', expecting ')'
+app/views/articles/index.html.erb:30: syntax error, unexpected ':', expecting ')'
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:54:35 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2155)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4863)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.3ms | Allocations: 6038)
+
+
+Started DELETE "/articles/3" for 127.0.0.1 at 2022-02-09 11:54:44 +0530
+Processing by ArticlesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:43:in `destroy'
+  [1m[36mArticle Destroy (0.2ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/articles_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (59.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:43:in `destroy'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 65ms (ActiveRecord: 60.0ms | Allocations: 2843)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:54:44 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1415)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3736)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 4175)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2022-02-09 11:55:44 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3114)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 0.2ms | Allocations: 4761)
+
+
+Started GET "/articles/5" for 127.0.0.1 at 2022-02-09 11:59:25 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 516)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3187)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.1ms | Allocations: 4876)
+
+
+Started DELETE "/articles/5" for 127.0.0.1 at 2022-02-09 11:59:28 +0530
+Processing by ArticlesController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:43:in `destroy'
+  [1m[36mArticle Destroy (0.3ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/articles_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (54.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:43:in `destroy'
+Redirected to http://localhost:3000/
+Completed 303 See Other in 61ms (ActiveRecord: 55.0ms | Allocations: 2460)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 11:59:28 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1589)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3809)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.1ms | Allocations: 4273)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 11:59:33 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 19.2ms | Allocations: 7386)
+  Rendered articles/new.html.erb within layouts/application (Duration: 21.3ms | Allocations: 7733)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 9892)
+Completed 200 OK in 26ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 10344)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 11:59:42 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"test title", "body"=>"test body content"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test title"], ["body", "test body content"], ["created_at", "2022-02-09 06:29:42.554651"], ["updated_at", "2022-02-09 06:29:42.554651"]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (104.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 116ms (ActiveRecord: 104.8ms | Allocations: 3429)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:59:42 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1398)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3739)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.1ms | Allocations: 4127)
+
+
+Started GET "/articles/7/edit" for 127.0.0.1 at 2022-02-09 11:59:47 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.8ms | Allocations: 947)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3294)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 4185)
+
+
+Started PATCH "/articles/7" for 127.0.0.1 at 2022-02-09 11:59:57 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"test title", "body"=>"test body content show worked"}, "commit"=>"Update Article", "id"=>"7"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "test body content show worked"], ["updated_at", "2022-02-09 06:29:57.758535"], ["id", 7]]
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (55.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 64ms (ActiveRecord: 55.7ms | Allocations: 3024)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 11:59:57 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1340)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3550)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 3894)
+
+
+Started GET "/articles/7" for 127.0.0.1 at 2022-02-09 12:00:00 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 133)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2371)
+Completed 200 OK in 16ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 3178)
+
+
+Started GET "/articles/7/edit" for 127.0.0.1 at 2022-02-09 12:00:03 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.1ms | Allocations: 850)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 2.7ms | Allocations: 958)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3004)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.1ms | Allocations: 3810)
+
+
+Started PATCH "/articles/7" for 127.0.0.1 at 2022-02-09 12:00:11 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"test title", "body"=>"test body content show worked edit also"}, "commit"=>"Update Article", "id"=>"7"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "test body content show worked edit also"], ["updated_at", "2022-02-09 06:30:11.473612"], ["id", 7]]
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (71.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+Redirected to http://localhost:3000/articles
+Completed 302 Found in 81ms (ActiveRecord: 72.5ms | Allocations: 2849)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:00:11 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1340)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3600)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.1ms | Allocations: 3943)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 12:00:31 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.2ms | Allocations: 831)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2986)
+Completed 200 OK in 11ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 3329)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:00:32 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1338)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 3563)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.1ms | Allocations: 3903)
+
+
+Started GET "/" for 127.0.0.1 at 2022-02-09 12:28:31 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 7200)
+  Rendered layout layouts/application.html.erb (Duration: 78.3ms | Allocations: 40844)
+Completed 200 OK in 90ms (Views: 79.9ms | ActiveRecord: 1.8ms | Allocations: 47603)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 12:28:33 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 12.3ms | Allocations: 3507)
+  Rendered articles/new.html.erb within layouts/application (Duration: 13.6ms | Allocations: 3920)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 6083)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms | Allocations: 6626)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 12:28:44 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title of article", "body"=>"body"}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.1ms | Allocations: 1776)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1952)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4149)
+Completed 422 Unprocessable Entity in 10ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5841)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 12:28:54 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title of article", "body"=>"                  "}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.3ms | Allocations: 1631)
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1738)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3834)
+Completed 422 Unprocessable Entity in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4981)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 12:28:59 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title of article", "body"=>"                  sdfsdf"}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "title of article"], ["body", "                  sdfsdf"], ["created_at", "2022-02-09 06:58:59.106636"], ["updated_at", "2022-02-09 06:58:59.106636"]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (49.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 57ms (ActiveRecord: 50.0ms | Allocations: 3332)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:28:59 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1534)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3826)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 4173)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 12:29:04 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.1ms | Allocations: 876)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 984)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3032)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3383)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 12:29:11 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"", "body"=>"      d     "}, "commit"=>"Create Article"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 6.7ms | Allocations: 1603)
+  Rendered articles/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1710)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 3806)
+Completed 422 Unprocessable Entity in 14ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 4971)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 12:29:16 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"article", "body"=>"      d     "}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mArticle Create (0.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "article"], ["body", "      d     "], ["created_at", "2022-02-09 06:59:16.129478"], ["updated_at", "2022-02-09 06:59:16.129478"]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (120.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 126ms (ActiveRecord: 120.8ms | Allocations: 2315)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:29:16 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1638)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3920)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.1ms | Allocations: 4263)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 12:32:12 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.9ms | Allocations: 885)
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 993)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3048)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3390)
+
+
+Started POST "/articles" for 127.0.0.1 at 2022-02-09 12:33:53 +0530
+Processing by ArticlesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"c language", "body"=>"general purpose programming langauge."}, "commit"=>"Create Article"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "c language"], ["body", "general purpose programming langauge."], ["created_at", "2022-02-09 07:03:53.998090"], ["updated_at", "2022-02-09 07:03:53.998090"]]
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (109.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:20:in `create'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 119ms (ActiveRecord: 110.5ms | Allocations: 2317)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:33:54 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1788)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4093)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 4436)
+
+
+Started GET "/articles/10/edit" for 127.0.0.1 at 2022-02-09 12:33:57 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.0ms | Allocations: 1075)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1413)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3558)
+Completed 200 OK in 18ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 9363)
+
+
+Started PATCH "/articles/10" for 127.0.0.1 at 2022-02-09 12:34:02 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"c language", "body"=>"general purpose programming language."}, "commit"=>"Update Article", "id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "body" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["body", "general purpose programming language."], ["updated_at", "2022-02-09 07:04:02.907200"], ["id", 10]]
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (54.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 69ms (ActiveRecord: 54.4ms | Allocations: 3198)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:34:02 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1806)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4101)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 4448)
+
+
+Started GET "/articles/10" for 127.0.0.1 at 2022-02-09 12:34:05 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2021)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2114)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2972)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <html>
+    <head>
+        <title>.: Article | Show Article :. </title>
+    </head>
+<body>
+        <center>
+            <%= link_to "Home", articles_path() %>
+            <h2>Article Details</h2>
+            
+            <table border="1px">
+                <thead>
+                    <tr>
+                        <td>Title</td>
+                        <td>Body</td>
+                        <td>Created At</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td><%= @article.title %></td>
+                            <td><%= @article.body %></td>
+                            <td><%= @article.created_at %></td>
+                            <td> 
+                                <%= link_to "Edit", edit_article_pat    h(@article) %> &nbsp;
+                                <%= link_to "Destroy", article_path(@article), data: {
+                                        turbo_method: :delete,
+                                        turbo_confirm: "Are you sure?" 
+                                } %>
+                            </td>
+                        </tr>
+                </tbody>
+            </table>
+            
+        </center>
+</body>
+</html>
+
+):
+1:    <html>
+2:        <head>
+3:            <title>.: Article | Show Article :. </title>
+4:        </head>
+5:    <body>
+6:            <center>
+7:                <%= link_to "Home", articles_path() %>
+8:                <h2>Article Details</h2>
+9:                
+10:                <table border="1px">
+11:                    <thead>
+12:                        <tr>
+13:                            <td>Title</td>
+14:                            <td>Body</td>
+15:                            <td>Created At</td>
+16:                            <td>Action</td>
+17:                        </tr>
+18:                    </thead>
+19:                    <tbody>
+20:                            <tr>
+21:                                <td><%= @article.title %></td>
+22:                                <td><%= @article.body %></td>
+23:                                <td><%= @article.created_at %></td>
+24:                                <td> 
+25:                                    <%= link_to "Edit", edit_article_pat    h(@article) %> &nbsp;
+26:                                    <%= link_to "Destroy", article_path(@article), data: {
+27:                                            turbo_method: :delete,
+28:                                            turbo_confirm: "Are you sure?" 
+29:                                    } %>
+30:                                </td>
+31:                            </tr>
+32:                    </tbody>
+33:                </table>
+34:                
+35:            </center>
+36:    </body>
+37:    </html>
+  
+app/views/articles/show.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/show.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/show.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/show.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/show.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+app/views/articles/show.html.erb:25: syntax error, unexpected local variable or method, expecting `do' or '{' or '('
+Started GET "/articles/10" for 127.0.0.1 at 2022-02-09 12:35:34 +0530
+Started GET "/articles/10" for 127.0.0.1 at 2022-02-09 12:35:34 +0530
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:38:31 +0530
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 7649)
+  Rendered layout layouts/application.html.erb (Duration: 79.8ms | Allocations: 41402)
+Completed 200 OK in 90ms (Views: 82.0ms | ActiveRecord: 0.7ms | Allocations: 48161)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 12:38:34 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (2.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 506)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2937)
+Completed 200 OK in 13ms (Views: 6.1ms | ActiveRecord: 2.0ms | Allocations: 6022)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-02-09 12:38:37 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 8.9ms | Allocations: 3540)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 10.5ms | Allocations: 3905)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 6054)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.1ms | Allocations: 6962)
+
+
+Started PATCH "/articles/1" for 127.0.0.1 at 2022-02-09 12:38:38 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title1", "body"=>"body111111111111111"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1919)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:38:38 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1849)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4230)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 4667)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-02-09 12:38:41 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 1.8ms | Allocations: 969)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1081)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3121)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 3942)
+
+
+Started PATCH "/articles/1" for 127.0.0.1 at 2022-02-09 12:38:42 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title1", "body"=>"body111111111111111"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1220)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:38:42 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1789)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4062)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 4405)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 12:38:46 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2409)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms | Allocations: 3215)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-02-09 12:38:51 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 2.1ms | Allocations: 909)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1017)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3056)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 3861)
+
+
+Started PATCH "/articles/1" for 127.0.0.1 at 2022-02-09 12:38:55 +0530
+Processing by ArticlesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "article"=>{"title"=>"title11111111111111111", "body"=>"body111111111111111"}, "commit"=>"Update Article", "id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:32:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mArticle Update (0.3ms)[0m  [1m[33mUPDATE "articles" SET "title" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["title", "title11111111111111111"], ["updated_at", "2022-02-09 07:08:55.185977"], ["id", 1]]
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+  [1m[36mTRANSACTION (110.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:33:in `update'
+Redirected to http://127.0.0.1:3000/articles
+Completed 302 Found in 120ms (ActiveRecord: 111.0ms | Allocations: 3696)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 12:38:55 +0530
+Processing by ArticlesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1789)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4080)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.1ms | Allocations: 4423)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20220209071914)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar, "body" text, "article_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_3bf61a60d3"
+FOREIGN KEY ("article_id")
+  REFERENCES "articles" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_comments_on_article_id" ON "comments" ("article_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220209071914"]]
+  [1m[36mTRANSACTION (92.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:02:14 +0530
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 46.4ms | Allocations: 19074)
+  Rendered layout layouts/application.html.erb (Duration: 109.6ms | Allocations: 52301)
+Completed 200 OK in 143ms (Views: 111.9ms | ActiveRecord: 1.4ms | Allocations: 68018)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2022-02-09 13:02:36 +0530
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"ravi ", "body"=>"body comment"}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 4681)
+
+
+  
+NoMethodError (undefined method `comments' for Article:Class):
+  
+app/controllers/comments_controller.rb:5:in `create'
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 13:03:55 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:21
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 4573)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 18165)
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 1.0ms | Allocations: 20910)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 13:03:55 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1788)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4081)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 4439)
+
+
+Started GET "/articles/1/edit" for 127.0.0.1 at 2022-02-09 13:03:58 +0530
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:28:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 4.8ms | Allocations: 1489)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1834)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 3874)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 5412)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:04:02 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 13.2ms | Allocations: 5682)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 7833)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 0.8ms | Allocations: 8658)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2022-02-09 13:04:23 +0530
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"ravindra", "body"=>"body111111 comment"}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["commenter", "ravindra"], ["body", "body111111 comment"], ["article_id", 1], ["created_at", "2022-02-09 07:34:23.224047"], ["updated_at", "2022-02-09 07:34:23.224047"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (135.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+Redirected to http://127.0.0.1:3000/articles/1
+Completed 302 Found in 145ms (ActiveRecord: 136.0ms | Allocations: 4695)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:04:23 +0530
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1248)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3384)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 4285)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2022-02-09 13:13:31 +0530
+Processing by ArticlesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.2ms | Allocations: 1356)
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1764)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4203)
+Completed 200 OK in 11ms (Views: 9.8ms | Allocations: 5379)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 13:13:36 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/views/articles/index.html.erb:21
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 2917)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 5142)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 7.4ms | Allocations: 5554)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 13:13:38 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1787)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4024)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 4363)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:13:41 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:49
+  Rendered articles/show.html.erb within layouts/application (Duration: 39.5ms | Allocations: 5411)
+  Rendered layout layouts/application.html.erb (Duration: 40.1ms | Allocations: 5493)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.6ms | Allocations: 6365)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Comment id: 1, commenter: "ravindra", body: "body111111 comment", article_id: 1, created_at: "2022-02-09 07:34:23.224047000 +0000", updated_at: "2022-02-09 07:34:23.224047000 +0000">):
+    49:                     <% @article.comments.each do |comment| %>
+    50:                         <tr>
+    51:                             <td><%= srno %><% srno+=1 %></td>
+    52:                             <td><%= comment.title %></td>
+    53:                             <td><%= comment.body %></td>
+    54:                             <td><%= comment.created_at %></td>
+    55:                             <td> 
+  
+app/views/articles/show.html.erb:52
+app/views/articles/show.html.erb:49
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:13:55 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:49
+  Rendered articles/show.html.erb within layouts/application (Duration: 19.3ms | Allocations: 5728)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 5816)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms | Allocations: 7378)
+
+
+  
+ActionView::Template::Error (undefined method `edit_comment_path' for #<ActionView::Base:0x00000000011a58>
+Did you mean?  edit_article_path):
+    53:                             <td><%= comment.body %></td>
+    54:                             <td><%= comment.created_at %></td>
+    55:                             <td> 
+    56:                                 <%= link_to "Edit", edit_comment_path(comment) %> &nbsp;
+    57:                                 <%= link_to "Destroy", comment_path(comment), data: {
+    58:                                         turbo_method: :delete,
+    59:                                         turbo_confirm: "Are you sure?" 
+  
+app/views/articles/show.html.erb:56
+app/views/articles/show.html.erb:49
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:14:21 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:49
+  Rendered articles/show.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2746)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5189)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.3ms | Allocations: 6822)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2022-02-09 13:14:36 +0530
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"ravindra ", "body"=>"comment 2"}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["commenter", "ravindra "], ["body", "comment 2"], ["article_id", 1], ["created_at", "2022-02-09 07:44:36.176897"], ["updated_at", "2022-02-09 07:44:36.176897"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (165.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 174ms (ActiveRecord: 166.2ms | Allocations: 3183)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:14:36 +0530
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:49
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1772)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 3823)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 4696)
+
+
+Started POST "/articles/1/comments" for 127.0.0.1 at 2022-02-09 13:14:48 +0530
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"commenter"=>"ravindra", "body"=>"comment 3"}, "commit"=>"Create Comment", "article_id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["commenter", "ravindra"], ["body", "comment 3"], ["article_id", 1], ["created_at", "2022-02-09 07:44:48.664166"], ["updated_at", "2022-02-09 07:44:48.664166"]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (131.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 139ms (ActiveRecord: 131.4ms | Allocations: 3089)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2022-02-09 13:14:48 +0530
+Processing by ArticlesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 1]]
+  ↳ app/views/articles/show.html.erb:49
+  Rendered articles/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1816)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3855)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 4663)
+
+
+Started GET "/articles" for 127.0.0.1 at 2022-02-09 13:15:10 +0530
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:21
+  Rendered articles/index.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2173)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4377)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.2ms | Allocations: 4769)
+
+
+Started GET "/articles/4" for 127.0.0.1 at 2022-02-09 13:15:12 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/views/articles/show.html.erb:49
+  Rendered articles/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1693)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3732)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms | Allocations: 4537)
+
+
