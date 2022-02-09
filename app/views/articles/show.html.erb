@@ -12,6 +12,7 @@
                     <tr>
                         <td>Title</td>
                         <td>Body</td>
+                        <th>Status</th>
                         <td>Created At</td>
                         <td>Action</td>
                     </tr>
@@ -20,6 +21,7 @@
                         <tr>
                             <td><%= @article.title %></td>
                             <td><%= @article.body %></td>
+                            <td><%= @article.status %></td>
                             <td><%= @article.created_at %></td>
                             <td> 
                                 <%= link_to "Edit", edit_article_path(@article) %> &nbsp;
@@ -32,7 +34,8 @@
 
                 </tbody>
             </table>
-            
+
+               
             <h2>Article Comments</h2>
             
             <table border="1px">
@@ -47,19 +50,23 @@
                 </thead>
                 <tbody>
                     <% @article.comments.each do |comment| %>
+                        <% unless comment.archived? %>
                         <tr>
                             <td><%= srno %><% srno+=1 %></td>
                             <td><%= comment.commenter %></td>
                             <td><%= comment.body %></td>
                             <td><%= comment.created_at %></td>
                             <td> 
-                               
+                                <%= link_to "Destroy", [comment.article, comment], data: {
+                                    turbo_method: :delete,
+                                    turbo_confirm: "Are you sure?"
+                                } %>
                             </td>
                         </tr>
+                        <% end %>
                     <% end %>
                 </tbody>
             </table>
-
             <h2>Add a comment:</h2>
             <%= form_with model: [ @article, @article.comments.build ] do |form| %>
             <p>
@@ -74,7 +81,6 @@
                 <%= form.submit %>
             </p>
             <% end %>
-            
         </center>
 </body>
 </html>
