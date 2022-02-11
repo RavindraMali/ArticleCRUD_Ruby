@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index]
+  # http_basic_authenticate_with name: "ravi", password: "ravi", except: [:index, :show]
+  http_basic_authenticate_with name: "ravi", password: "delete", only: :destroy
   def index
     @artcles = Article.all
   end
@@ -34,7 +37,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to articles_path
     else
-      puts "something wents wrong"
+        render :edit, status: :unprocessable_entity
     end
   end
 

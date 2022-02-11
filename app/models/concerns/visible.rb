@@ -10,5 +10,12 @@ module Visible
     def archived?
       status == 'archived'
     end
+
+    class_methods do
+      def public_count
+        where(status: 'public').count
+      end
+    end
+    
   end
   

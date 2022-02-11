@@ -5,6 +5,7 @@
 <body>
         <center>
             <h2>Article List</h2>
+            <h4>Publically avaiable articles : <%= Article.public_count %></h4>
             <%= link_to "new", new_article_path %>
             <table border="1px">
                 <thead>

@@ -35,52 +35,26 @@
                 </tbody>
             </table>
 
-               
             <h2>Article Comments</h2>
-            
             <table border="1px">
                 <thead>
                     <tr>
-                        <td>Sr.No<% srno=1 %></td>
+                        <td>Sr.No<% $srno=1 %></td>
                         <td>Commenter</td>
                         <td>Body</td>
+                        <td>Status</td>
                         <td>Created At</td>
                         <td>Action</td>
                     </tr>
                 </thead>
+              
+                    <%= render @article.comments %>  
+
                 <tbody>
-                    <% @article.comments.each do |comment| %>
-                        <% unless comment.archived? %>
-                        <tr>
-                            <td><%= srno %><% srno+=1 %></td>
-                            <td><%= comment.commenter %></td>
-                            <td><%= comment.body %></td>
-                            <td><%= comment.created_at %></td>
-                            <td> 
-                                <%= link_to "Destroy", [comment.article, comment], data: {
-                                    turbo_method: :delete,
-                                    turbo_confirm: "Are you sure?"
-                                } %>
-                            </td>
-                        </tr>
-                        <% end %>
-                    <% end %>
                 </tbody>
             </table>
-            <h2>Add a comment:</h2>
-            <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-            <p>
-                <%= form.label :commenter %><br>
-                <%= form.text_field :commenter %>
-            </p>
-            <p>
-                <%= form.label :body %><br>
-                <%= form.text_area :body %>
-            </p>
-            <p>
-                <%= form.submit %>
-            </p>
-            <% end %>
+           
+            <%= render 'comments/form' %>
         </center>
 </body>
 </html>
